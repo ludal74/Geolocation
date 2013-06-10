@@ -1,21 +1,20 @@
 <?php
 
-namespace GMaps\Service;
+namespace Geolocation\Service;
 
 /**
- * GMaps\Service\GoogleMap
+ * Geolocation\Service\Geolocation
  *
- * Zend Framework2 Google Map Class  (Google Maps API v3)
+ * Zend Framework2 Geolocation  Class  ( freegeoip )
  *
  * An open source application development framework for PHP 5.1.6 or newer
  * 
- * This class enables the creation of google maps
  *
  * @package		Zend Framework 2
- * @author		Ramkumar 
+ * @author		Ludal74 
  */
  
-class GoogleMap {
+class Geolocation {
 
     var $url = '';
 	var $ip = '';
