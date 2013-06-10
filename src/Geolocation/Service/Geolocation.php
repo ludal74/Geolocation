@@ -2,6 +2,11 @@
 
 namespace Geolocation\Service;
 
+
+use Zend\Uri\Uri;
+use Zend\Json\Json;
+use Zend\Http\Client as HttpClient;
+
 /**
  * Geolocation\Service\Geolocation
  *
@@ -14,6 +19,8 @@ namespace Geolocation\Service;
  * @author		Ludal74 
  */
  
+ 
+ 
 class Geolocation {
 
     var $url = '';
@@ -22,7 +29,7 @@ class Geolocation {
     /**
      * Constructor
      */
-    function __construct( $url ) 
+   public  function __construct( $url ) 
 	{
         $this->url = $url;
     }
@@ -30,7 +37,7 @@ class Geolocation {
 	/**
 	*
 	*/
-	function setIp( $ip )
+	public function setIp( $ip )
 	{
 		$this->ip = $ip;
 	}
@@ -38,10 +45,23 @@ class Geolocation {
 
     // --------------------------------------------------------------------
 
-    function getLocation()
+    public function getLocation()
 	{
-		$result = $this->url.'/json/'.$this>ip;
-		return $result;
+		
+		$uri = new Uri();
+		$uri->setHost( $this->url.'/json/'.$this->ip );
+
+        $httpClient = new HttpClient();
+		$httpClient->resetParameters();
+		$httpClient->setUri( $uri->toString() );
+		$stream = $httpClient->send();
+		
+		$body = Json::decode( $stream->getBody(), Json::TYPE_OBJECT);
+		//$body = $stream->getBody();
+		
+		$this->location = new Location( $body );
+		
+		return $this->location;
 	}
 
 }

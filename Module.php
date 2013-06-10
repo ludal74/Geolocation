@@ -25,7 +25,7 @@ class Module
             'factories' => array(
                 'Geolocation\Service\Geolocation' => function ($sm) {
                     $config = $sm->get('config');
-                    return new \GMaps\Service\GoogleMap($config['Geolocation']['url']);
+                    return new \Geolocation\Service\Geolocation($config['Geolocation']['url']);
                 },
             ),
         );
