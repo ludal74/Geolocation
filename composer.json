@@ -1,7 +1,7 @@
 {
     "name": "ludal74/freegeoip",
     "type": "library",
-    "description": "ZF2 Google Maps module",
+    "description": "ZF2 Geolocation module",
     "keywords": ["geolocation","ip","free", "zf2"],
     "homepage": "https://github.com/ludal74/Geolocation",
     "license": "MIT",
