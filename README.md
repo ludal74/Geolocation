@@ -1,4 +1,4 @@
-zf2-google-maps-
+zf2-geolocation
 ================
 
 #### Geolocation - ZF2  Module 
