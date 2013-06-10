@@ -1,5 +1,5 @@
 {
-    "name": "geolocation/freegeoip",
+    "name": "ludal74/freegeoip",
     "type": "library",
     "description": "ZF2 Google Maps module",
     "keywords": ["geolocation","ip","free", "zf2"],
