@@ -1,0 +1,27 @@
+{
+    "name": "Geolocation/freegeoip",
+    "type": "library",
+    "description": "ZF2 Google Maps module",
+    "keywords": ["geolocation","ip","free", "zf2"],
+    "homepage": "https://github.com/ludal74/Geolocation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Favre Ludovic",
+            "email": "lf.developpement@gmail.com",
+            "homepage": ""
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Freegeoip": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
