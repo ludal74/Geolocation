@@ -1,5 +1,5 @@
 <?php
-namespace GMaps;
+namespace Geolocation;
 
 class Module
 {
@@ -19,12 +19,13 @@ class Module
         );
     }
     
+	
     public function getServiceConfig() {
         return array(
             'factories' => array(
-                'GMaps\Service\GoogleMap' => function ($sm) {
+                'Geolocation\Service\Geolocation' => function ($sm) {
                     $config = $sm->get('config');
-                    return new \GMaps\Service\GoogleMap($config['GMaps']['api_key']);
+                    return new \GMaps\Service\GoogleMap($config['Geolocation']['url']);
                 },
             ),
         );
